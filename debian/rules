@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DPKG_GENSYMBOLS_CHECK_LEVEL = 4
+
+override_dh_auto_configure:
+	dh_auto_configure -- -Ddoc=$(if $(filter libgnt-doc,$(shell dh_listpackages)),true,false) -Dpython2=false
+
+%:
+	dh $@

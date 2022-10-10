@@ -1,0 +1,10 @@
+---
+include:
+  - https://salsa.debian.org/salsa-ci-team/pipeline/raw/master/salsa-ci.yml
+  - https://salsa.debian.org/salsa-ci-team/pipeline/raw/master/pipeline-jobs.yml
+
+variables:
+  # backports-upload-has-incorrect-version-number: Salsa CI appends +salsaci.
+  # backports-changes-missing: Salsa CI does not pass -v when building because
+  # it has no way of knowing which version to specify.
+  SALSA_CI_LINTIAN_SUPPRESS_TAGS: backports-changes-missing,backports-upload-has-incorrect-version-number

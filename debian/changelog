@@ -1,0 +1,43 @@
+libgnt (2.14.3-1) unstable; urgency=medium
+
+  * New upstream version 2.14.3
+    - Drop doc patch merged (with changes) upstream
+    - Disable Python2
+
+ -- Richard Laager <rlaager@debian.org>  Mon, 04 Oct 2021 23:57:09 -0500
+
+libgnt (2.14.2-1) unstable; urgency=medium
+
+  [ Richard Laager ]
+  * Fix documentation dependencies (Closes: 988819)
+  * README.source: Remove inaccurate text
+  * New upstream version 2.14.2
+    - Fix a SEGFAULT in gnt_combo_box_get_dropdown. (RR #793) (ivanhoe)
+    - Fix an invalid read/write when hiding widgets. (RR #810) (ivanhoe)
+    - Look for python-2.7.pc as well as python2.pc. (RR #822) (Gary Kramlich)
+
+  [ Helmut Grohne ]
+  * Fix FTCBFS: Skip gtkdoc in arch-only build. (Closes: 994674)
+
+ -- Richard Laager <rlaager@debian.org>  Sat, 25 Sep 2021 16:33:50 -0500
+
+libgnt (2.14.1-1) unstable; urgency=medium
+
+  * New upstream version 2.14.1
+
+ -- Richard Laager <rlaager@debian.org>  Fri, 05 Feb 2021 01:11:35 -0600
+
+libgnt (2.14.0-2) unstable; urgency=medium
+
+  * Add debian/lintian-brush.conf
+  * Re-upload as source upload
+
+ -- Richard Laager <rlaager@debian.org>  Thu, 04 Feb 2021 02:07:49 -0600
+
+libgnt (2.14.0-1) unstable; urgency=medium
+
+  * Initial release (Closes: 949977)
+    Thanks to Gary Kramlich for packaging work (done upstream).
+    Thanks to Harlan Lieberman-Berg for packaging review for Gary.
+
+ -- Richard Laager <rlaager@debian.org>  Fri, 22 Jan 2021 23:51:01 -0600

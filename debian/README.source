@@ -1,0 +1,65 @@
+This package is maintained using `git` and `git-buildpackage`.  The repository
+is kept on Debian Salsa: https://salsa.debian.org/debian/libgnt
+
+Branches
+--------
+
+The branches are named per [DEP-14] with the default packaging branch being
+`debian/unstable` (rather than `debian/master`).
+
+Upstream uses Mercurial, so there is no `master` branch here.
+
+The `pristine-tar` branch is used by the `pristine-tar` utility.  It contains
+the data (besides that in the `upstream/latest` branch) necessary to exactly
+reconstruct the binary orig tarball.
+
+The `upstream/latest` branch contains the unpacked contents of the orig
+tarball.
+
+[DEP-14]: https://dep-team.pages.debian.net/deps/dep14/
+
+Patches
+-------
+
+Patches are stored "unapplied".  Specifically, they are in `quilt` format in
+the `debian/patches` directory.
+
+Git Hooks
+---------
+
+A .git/hooks/pre-commit script like this will ensure that `wrap-and-sort` is
+run before each commit, to keep things sorted and minimize diffs:
+    #!/bin/sh
+    wrap-and-sort --wrap-always --trailing-comma
+
+New Upstream Release
+--------------------
+
+Here is how to handle a new upstream version:
+
+Import the orig tarball:
+
+    gbp import-orig --uscan
+
+Update version in `debian/changelog` to e.g. `2.14.1-1`.  Add an entry for
+"New upstream version".  If someone has filed a bug asking for the new
+upstream version, close that with that changelog entry.  As items under that
+entry, list the relevant changes from upstream.
+
+Remove patches which were applied upstream: delete the file(s) and remove them
+from `debian/patches/series`.  Refresh Debian patches as needed: Step through
+them with `quilt push`.  If the patch applies cleanly, move to the next one.
+If the patch applies with fuzz, refresh it with `quilt refresh`.  If the patch
+fails to apply, force it with `quilt push -f`, manually merge the changes from
+the `.rej` file(s), and then refresh it.  For any patches that were refreshed,
+edit the patch file in `debian/patches` and set the `Last-Update` field to the
+current date.
+
+Update debian/copyright with any new authors from the upstream COPYRIGHT file.
+
+Once the package builds, push it:
+
+    gbp push
+    # Since the changelog will use UNRELEASED, `gbp push` will not push the
+    # debian/unstable branch, so push it directly using git:
+    git push

@@ -1,0 +1,71 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: libgnt
+Upstream-Contact: grim@reaperworld.com
+Source: https://keep.imfreedom.org/libgnt/libgnt
+
+Files: *
+Copyright: Copyright 2006-2020 by the following:
+           Ankit Vani
+           Brad Smith
+           Christopher O'Brien
+           convert-repo
+           Daniel Atallah
+           Daniel Kamil Kozar
+           dx
+           Ed Catmur
+           Elliott Sales de Andrade
+           Eric Polino
+           Ethan Blanton
+           Evan Schoenberg
+           Gabriel Schulhof
+           Gary Kramlich
+           James Geboski
+           Jochen Kemnade
+           John Bailey
+           Jorge Villaseñor
+           Ka-Hing Cheung
+           kdex
+           Lars Wendler
+           Luke Schierer
+           Marcus Lundblad
+           Mark Doliner
+           Mark Schneider
+           Michael McConville
+           Michael Ruprecht
+           Mike Ruprecht
+           Olaf Hering
+           Paul Aurich
+           Petteri Pitkänen
+           Richard Laager
+           Richard Nelson
+           Sadrul Habib Chowdhury
+           Saleem Abdulrasool
+           Sean Egan
+           Shawn Napora
+           Stu Tomlinson
+           Tomasz Mon
+           Tomasz Wasilczyk
+           Will Thompson
+License: GPL-2+
+
+Files: debian/*
+Copyright: Gary Kramlich <grim@reaperworld.com>
+           Richard Laager <rlaager@debian.org>
+License: GPL-2+
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2, or (at your option)
+ any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU General Public License can be
+ found in `/usr/share/common-licenses/GPL-2'.
